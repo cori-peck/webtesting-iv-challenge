@@ -8,8 +8,12 @@ module.exports = {
   findById,
 };
 
-async function insert() {
-    return null;
+async function insert(code) {
+  const [ id ] = await db('discountCodes').insert(code)
+
+    return db('discountCodes')
+      .where({ id })
+      .first();
 }
 
 async function update(id, changes) {
@@ -21,7 +25,7 @@ function remove(id) {
 }
 
 function getAll() {
-  return db();
+  return db('discountCodes');
 }
 
 function findById(id) {

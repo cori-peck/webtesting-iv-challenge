@@ -16,7 +16,7 @@ exports.up = function(knex) {
         .string('description', 250)
         .notNullable();
       tbl
-        .string('applies to', 250);
+        .string('appliesTo', 250);
   })
 };
 
