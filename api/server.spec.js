@@ -6,8 +6,8 @@ describe('server.js', () => {
         it('should retrun an OK status code from the home route', () => {
             return request(server)
             .get('/')
-            .then(res => {
-                expect(res.status).toBe(200);
+            .then(response => {
+                expect(response.status).toBe(200);
             })
         })
     })
