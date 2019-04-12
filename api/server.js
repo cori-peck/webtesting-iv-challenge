@@ -10,6 +10,12 @@ server.get('/', async (req, res) => {
     res.status(200).json({ api: 'connection up' })
     })
 
+server.get('/codes', async (req, res) => {
+    const list = await codes.getAll();
+
+    res.status(200).json(list);
+})
+
 
 
 
